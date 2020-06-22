@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>30</x>
+      <y>60</y>
+      <w>240</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>
+CruiseDS
+--
+--
+find(cruiseNo : int) : Cruise
+save(entity : Cruise)
+delete(entity : Cruise)
+findAll() : List&lt;Cruise&gt; 
+findWithSameHost(cruiseNo : int, h : Host) : Cruise
+findWithHost(h : Host) : List&lt;Cruise&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>330</x>
+      <y>50</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>ReservationDS
+--
+--
+find(reserveNo : int) : Reservation
+findWithSameCruise(c : Cruise): List&lt;Reservation&gt;
+findWithSameUser(u : User): List&lt;Reservation&gt;
+reservesFindAllCruiseEnd() : List&lt;Reservation&gt; 
+save(entity : Reservation)
+delete(entity : Reservation)
+findAll() : List&lt;Reservation&gt; 
+reservesWithSameUser(reserveNo : int, u : User):Reservation
+reservesWithSameCruise(reserveNo : int, c : Cruise):Reservation</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>570</x>
+      <y>100</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>CruiseMemory
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>650</x>
+      <y>200</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>HostMemory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>760</x>
+      <y>70</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ReservationMemory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>110</x>
+      <y>100</y>
+      <w>550</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30;60;30;270;530;270;530;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>230</x>
+      <y>200</y>
+      <w>510</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30;140;30;200;490;210;490;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>420</x>
+      <y>70</y>
+      <w>440</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30;110;30;360;420;360;420;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Package</type>
+    <coordinates>
+      <x>20</x>
+      <y>0</y>
+      <w>520</w>
+      <h>670</h>
+    </coordinates>
+    <panel_attributes>Name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Package</type>
+    <coordinates>
+      <x>550</x>
+      <y>10</y>
+      <w>380</w>
+      <h>660</h>
+    </coordinates>
+    <panel_attributes>memory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>30</x>
+      <y>420</y>
+      <w>310</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>UserDS
+--
+--
+find(userNo : int) : User
+save(entity : User)
+delete(entity : User)
+findAll() : List&lt;User&gt;
+Login(email : EmailAddress, pass : String) : User </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>180</x>
+      <y>240</y>
+      <w>220</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>HostDS
+--
+--
+find(hostNo : int) : Host
+save(entity : Host)
+delete(entity :  Host)
+findAll() : List&lt; Host&gt; 
+Login(compname : String, pws : String) : Host</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>360</x>
+      <y>450</y>
+      <w>170</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>EvaluationDS
+--
+--
+find(evalNo : int) : Evaluation
+save(entity : Evaluation)
+delete(entity : Evaluation)
+findAll() : List&lt;Evaluation&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>410</x>
+      <y>480</y>
+      <w>490</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30;70;30;180;470;180;470;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>60</x>
+      <y>490</y>
+      <w>660</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30;30;30;150;640;150;640;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>620</x>
+      <y>490</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>UserSMemory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>800</x>
+      <y>480</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>EvaluationMemory</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

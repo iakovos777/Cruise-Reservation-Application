@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>120</y>
+      <w>124</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>User
+--
+-userId:Integer
+-firstName:String
+-lastName:String
+-telephone:Integer
+-address:Address
+-email:EmailAddress
+-card:CardElements
+-password:String
+-reserve:Set&lt;Reservation&gt;
+--
++ setUserId(userId:integer)
++ getUserId():Integer{query}
++ setPassword(password:String)
++ getPassword(): String{query}
++ getFistName(): String{query}
++ setFirstName(firstName: String)
++ getLastName(): String{query}
++ setLastName(lastName: String)
++ getTelephone(): Integer{query}
++ setTelephone(telephone: integer)
++ getAddress(): Address{query}
++ setAddress(address: Address)
++ getEmail(): EmailAddress{query}
++ setEmail(email: EmailAddress)
++ getCard(): CardElements{query}
++ setCard(card: CardElements)
++ getReserve(): Set&lt;Reservation&gt;{query}
++ addReserve(reservation:Reservation)
++ cancelReserve(reservation:Reservation)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>176</y>
+      <w>136</w>
+      <h>244</h>
+    </coordinates>
+    <panel_attributes>Reservation
+--
+-count:Integer
+-ReservationID:Integer
+-reserveDate:SimpleCalendar
+-positionsReserved:Integer
+-cruise:Cruise
+-user:User
+-hasPay:Boolean
+-hasPrePay:Boolean
+-pay:Payment
+-eval:Evaluation
+--
++ getPayment():Payment{query}
++ setPayment()
++ getReservationID:Integer{query}
++ setReservationID(ReservationID:Integer)
++ getEvaluation():Evaluation{query}
++ getFinalDay():SimpleCalendar{query}
++ setEvaluation(eval:Evaluation)
++ setHasPrePay(hasPrePay:Boolean)
++ getHasPrePay():Boolean{query}
++ setHasPay(hasPay:Boolean)
++ getHasPay():Boolean{query}
++ getPositionsReserved():Integer{query}
++ setPositionsReserved(positionsReserved:Integer)
++ getReservationDate():SimpleCalendar{query}
++ getCruise():Cruise{query}
++ getUser():User{query}
++ setReservationDate(reserveDate:SimpleCalendar)
++ setCruise(cruise:Cruise)
++ setUser(user:User)
++ isPrePaidValid():Boolean{query}
++ isPaidValid():Boolean{query}
++ cancelation()
++ canEvaluate():Boolean{query}
++ eval():Evaluation{query}
++ toString():String{query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>200</y>
+      <w>108</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m2=*
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>124</y>
+      <w>192</w>
+      <h>392</h>
+    </coordinates>
+    <panel_attributes>Cruise
+--
+-cruiseId: Integer
+-positions:Integer
+-cost:Integer
+-prePaidAmount:Integer
+-departureDate:String
+-arrivalDate:String
+-duration:Integer
+-start:String
+-destination:String
+-description:String
+-prePaidAll:Boolean
+-infoMail:EmailAddress	
+-host:Host
+-evalCruise:Integer
+-state:CruiseState
+-reserves:Set&lt;Reservation&gt;
+
+--
++ setCruiseId(cruiseId:Integer)
++ getCruiseId():Integer{query}
++ setEvalCruise(evalCruise:Integer)
++ getEvalCruise():Integer{query}
++ getPositions(): Integer{query}
++ setPositions(positions:Integer)
++ getCost(): Integer{query}
++ setCost(cost:Integer)
++ getDepartureDate():String{query}
++ setDepartureDate(departureDate:String)
++ getArrivalDate(): String
++ setArrivalDate(arrivalDate:String)
++ getDuration(): Integer{query}
++ setDuration(duration:Integer)
++ getStart():String{query}
++ setStart(start:String)
++ getDestination():String{query}
++ setDestination(destination:String)
++ getPrePaidAll():Boolean{query}
++ setPrePaidAll(prePaidAll:Boolean)
++ getInfoMail():EmailAddress{query} 
++ setInfoMail(infoMail:EmailAddress)
++ getPrePaidAmount():Integer{query}
++ setPrePaidAmount(prePaidAmount:Integer)
++ getEmail():EmailAddress{query}
++ setEmail(infoMail:EmailAddress)
++ getHost():Host{query}
++ setHost(host:Host)
++ getState():CruiseState{query}
++ setState(state:CruiseState)
++ AllReservations():Set&lt;Reservation&gt;{query}
++ getReserve():Set&lt;Reservation&gt;{query}
++ State()
++ available()
++ full()
++ finish()
++ start()
++ countEval():Integer{query}
++ getEvaluations():Integer{query}
++ toString():String{query}
++ reserveCruise(user:User , pos Integer):Reservation{query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>652</x>
+      <y>204</y>
+      <w>52</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=*
+m1=1</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>948</x>
+      <y>172</y>
+      <w>164</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Host
+
+--
+-hostId:integer
+-companyName:String
+-companyAddress:Address
+-companyEmail:EmailAddress
+-pwd:String
+-cruise:Cruise
+-cruises:Set&lt;Cruise&gt;
+--
++gethostId():Integer{query}
++sethostId(hostId:Integer)
++getCompanyName():String{query}
++setCompanyName(CompanyName:String)
++getCompanyAddress():Adress{query}
++setCompanyAddress(CompanyAddress:Adress)
++getCompanyEmail():EmailAddress{query}
++setCompanyEmail(CompanyEmail:EmailAddress)
++getCruises:Set&lt;Cruise&gt;{query}
++addCruise(cruise:Cruise)
++removeCruise(cruise:Cruise)
++AllCruises():Set&lt;Cruise&gt;{query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>884</x>
+      <y>204</y>
+      <w>72</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>312</y>
+      <w>12</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1052</x>
+      <y>312</y>
+      <w>12</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>708</x>
+      <y>564</y>
+      <w>152</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>Payment
+--
+-count:Integer
+-amount:Integer
+-payId:String
+-prePaidAll:Boolean
+-PrePaidAmmount:Integer
+-finalDayPayment:SimpleCalendar
+--
++ getAmount():float{query}
++ setAmount(Amount:float)
++ getPayID():String{query}
++ setPayID(PayID:String)
++ getPrePaidAll():Boolean{query}
++ setPrePaidAll(PrePaidAll:Boolean)
++ getPrePaidAmmount():Integer{query}
++ setPrePaidAmmount(PrePaidAmount:Integer)
++ getFinalDayPayment():SimpleCalendar{query}
++ setFinalDayPayment(FinalDayPayment:SimpleCalendar)
++ isPrePaidValid():Boolean{query}
++ isPaidValid(isPaidValid:Boolean)
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>512</y>
+      <w>12</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>344</y>
+      <w>104</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>Address
+--
+-street:String
+-number:String
+-city:String
+-country:String
+-zip:String
+--
++ getStreet():String{query}
++ setStreet(Street:String)
++ getNumber():String{query}
++ setNumber(Number:String)
++ getCity():String{query}
++ setCity(City:String)
++ getCountry():String{query}
++ setCountry(Country:String)
++ getZipCode():String{query}
++ setZipCode(zip:String)
++ toString()String{query}
++ equals(other:Object):Boolean{query}
++ hashCode():Integer{query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>228</x>
+      <y>364</y>
+      <w>92</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>EmailMessage
+--
+-from : EmailAdress
+-to : EmailAdress
+-subject : String
+-body : String
+--
++ setFrom(from:EmailAddress)
++ getFrom():EmailAddress{query}
++ setTo(to:EmailAddress)
++ getTo():EmailAddress{query}
++ setSubject(subject:String) 
++ getSubject():String{query} 
++ setBody(body:String) 
++ getBody():String{query}
++ appendToBody(text:String) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>388</x>
+      <y>312</y>
+      <w>12</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>312</y>
+      <w>12</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>824</x>
+      <y>720</y>
+      <w>84</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Evaluation
+--
+-count:Integer
+-evalId:Integer
+-comment:String
+-rating:Integer
+--
++ setEvalId(evalId:Integer)
++ getEvalId():Integer{query}
++ getComment():String{query}
++ setComment(Comment:String)
++ getRating():Integer{query}
++ setRating(Rating:Integer)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>512</y>
+      <w>20</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=1
+m1=0..1
+</panel_attributes>
+    <additional_attributes>10.0;520.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>480</y>
+      <w>132</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>CardElements
+--
+- numberCard: Integer
+- expireDate: String
+- name: String
+- CV: Integer
+--
++ getnumberCard():Integer{query}
++ setnumberCard(numberCard: Integer)
++ getexpireDate(): String{query}
++ setexpireDate(expireDate: String)
++ getname(): String{query}
++ setName(name: String)
++ getCV(): Integer{query}
++ setCV(CV: Integer)
++ toString()String{query}
++ equals(other:Object):Boolean{query}
++ hashCode():Integer{query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>332</x>
+      <y>312</y>
+      <w>12</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;420.0</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>1012</x>
+      <y>372</y>
+      <w>92</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>EmailMessage
+--
+-from : EmailAdress
+-to : EmailAdress
+-subject : String
+-body : String
+--
++ setFrom(from:EmailAddress)
++ getFrom():EmailAddress{query}
++ setTo(to:EmailAddress)
++ getTo():EmailAddress{query}
++ setSubject(subject:String) 
++ getSubject():String{query} 
++ setBody(body:String) 
++ getBody():String{query}
++ appendToBody(text:String) </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>352</y>
+      <w>104</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>Address
+--
+-street:String
+-number:String
+-city:String
+-country:String
+-zip:String
+--
++ getStreet():String{query}
++ setStreet(Street:String)
++ getNumber():String{query}
++ setNumber(Number:String)
++ getCity():String{query}
++ setCity(City:String)
++ getCountry():String{query}
++ setCountry(Country:String)
++ getZipCode():String{query}
++ setZipCode(zip:String)
++ toString()String{query}
++ equals(other:Object):Boolean{query}
++ hashCode():Integer{query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
